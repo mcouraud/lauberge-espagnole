@@ -1,6 +1,6 @@
-<h1>Les colocation à <%= params[:city].downcase.capitalize %> </h1>
+<h1>Les colocations à <%= params[:city].downcase.capitalize %> </h1>
 <% @flats.each do |flat|%>
-<p> Colocation de <%= flat.number_of_roomates%> personnes | <%= flat.flat_surface %> m² </p>
+<p></p> <%= link_to "Colocation de #{flat.number_of_roommates} personnes | #{flat.flat_surface} m²", flat %> </p>
 <% end %>
 
 
