@@ -1,19 +1,39 @@
-<h1> Colocation de <%= @flat.number_of_roommates%> personnes | <%= @flat.flat_surface %> m² </h1>
-<ul>
-  <li> Adresse : <%= @flat.address %> </li>
-  <li> Nombre de chambres : <%= @flat.number_of_rooms %> </li>
-  <li> Loyer: <%= @flat.rent %>€ / mois </li>
-  <li> Disponible à partir du <%= @flat.available_from %></li>
-</ul>
+<div class="container">
 
-<%= form_for [@flat, @booking] do |f| %>
-<%= f.date_field :start_date %>
-<%= f.date_field :end_date %>
-<%= f.submit %>
-<% end %>
+  <div class="row">
 
-<% if flash[:notice] %>
-<div class="notice"> <%= flash[:notice] %> </div>
-<% end %>
 
-<%=  link_to "Revenir à la recherche", controller: "flats", city: @flat.city  %>
+
+    <h1> Colocation de <%= @flat.number_of_roommates%> personnes | <%= @flat.flat_surface %> m² </h1>
+
+    <div class="col-xs-6">
+      <h2> Détails </h2>
+      <ul>
+        <li> Adresse : <%= @flat.address %> </li>
+        <li> Nombre de chambres : <%= @flat.number_of_rooms %> </li>
+        <li> Loyer: <%= @flat.rent %>€ / mois </li>
+        <li> Disponible à partir du <%= @flat.available_from %></li>
+      </ul>
+
+    </div>
+    <div class="col-xs-6">
+    <h2> Réserver cette colocation </h2>
+
+    <%= form_for [@flat, @booking] do |f| %>
+    <label>Date d'entrée</label><br>
+    <p> <%= f.date_field :start_date%> </p>
+    <label>Date de sortie</label><br>
+    <p> <%= f.date_field :end_date%> </p>
+    <p> <%= f.submit "Réserver"%> </p>
+    <% end %>
+
+    <% if flash[:notice] %>
+    <div class="notice"> <%= flash[:notice] %> </div>
+    <% end %>
+    </div>
+  </div>
+
+  <br>
+  <%=  link_to "↩︎ Revenir aux résultats", controller: "flats", city: @flat.city  %>
+
+</div>

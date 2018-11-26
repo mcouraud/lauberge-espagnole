@@ -1,5 +1,8 @@
-<h1>Trouve ta coloc</h1>
-<%= form_for @flat do |f| %>
-<%= f.text_field :city %>
-<%= f.submit %>
-<% end %>
+<div class="container">
+  <h1>Trouve ta colocation</h1>
+
+  <form action="/flats/index?" method="get">
+    <input type="text" name="city" value="">
+    <input type="submit" value="Rechercher"/>
+  </form>
+</div>
