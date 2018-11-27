@@ -10,7 +10,6 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
-    @user.id = 1
   end
 
   def create
