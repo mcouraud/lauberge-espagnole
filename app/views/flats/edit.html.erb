@@ -1,2 +1,30 @@
-<h1>Flats#edit</h1>
-<p>Find me in app/views/flats/edit.html.erb</p>
+<div class="container">
+
+<h1>Modifier mon annonce</h1>
+
+<%= form_for(@flat) do |f| %>
+<label>Ville</label><br>
+<p> <%= f.text_field :city%> </p>
+<label>Adresse</label><br>
+<p> <%= f.text_field :address%> </p>
+<label>Disponible à partir de</label><br>
+<p> <%= f.date_field :available_from%> </p>
+<label>Surface totale de la colocation</label><br>
+<p> <%= f.number_field :flat_surface%> </p>
+<label>Surface de la chambre disponible</label><br>
+<p> <%= f.number_field :room_surface%> </p>
+<label>Nombre de chambres</label><br>
+<p> <%= f.number_field :number_of_rooms%> </p>
+<label>Nombre de colocataires</label><br>
+<p> <%= f.number_field :number_of_roommates%> </p>
+<label>Description</label><br>
+<p> <%= f.text_area :description%> </p>
+<label>Photos</label><br>
+<p> <%= f.file_field :photo%> </p>
+<label>Loyer / mois (charges comprises)</label><br>
+<p> <%= f.number_field :rent%> </p>
+<p> <%= f.submit "Modifier"%> </p>
+<% end %>
+
+</div>
+

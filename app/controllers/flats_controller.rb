@@ -14,7 +14,12 @@ class FlatsController < ApplicationController
 
   def create
     @flat = Flat.new(flat_params)
-    @flat.save
+    if @flat.save
+      @flat.save
+      redirect_to @flat
+    else
+      render :new
+    end
   end
 
   def edit
@@ -30,7 +35,7 @@ class FlatsController < ApplicationController
   def destroy
     set_flat
     @flat.destroy
-    redirect_to flats_path
+    redirect_to controller: "flats", city: @flat.city
   end
 
   private
