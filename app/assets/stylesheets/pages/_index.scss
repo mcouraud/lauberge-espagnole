@@ -1,2 +1,38 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.text-center{
+  font-size: 31px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.card{
+  margin-left: 3px;
+  margin-bottom: 30px;
+  height: 40vh;
+}
+
+.card a{
+  text-decoration: none !important;
+  color: #fff;
+}
+
+.bandeau {
+  background: rgba(9,14,21,0.8);
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 40px;
+  padding-left: 5px;
+  padding-right: 10px;
+  border-radius: 3px;
+}
+
+.prix {
+  font-size: 20px;
+}
+
+.coloc {
+  font-size: 12px;
+}
