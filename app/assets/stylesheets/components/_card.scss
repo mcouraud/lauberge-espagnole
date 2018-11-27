@@ -5,6 +5,7 @@
   background-position: center;
   color: white;
   position: relative;
+  margin-top: 10px;
 }
 .card-user {
   position: absolute;
@@ -48,4 +49,18 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.card-row {
+  margin-top: 10px;
+}
+
+.card-container {
+  display: block;
+}
+
+.card-title{
+  display: flex;
+  justify-content: center;
+  text-align: center
 }

@@ -1,5 +1,4 @@
 <div class="container">
-
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/marseille');">
     <div class="banner-content">
       <h1>Trouve ta colocation facilement !</h1>
@@ -16,44 +15,72 @@
       </div>
     </div>
   </div>
-
+</div>
+<div class="container card-container">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-<h3 class="text-center">Retrouvez les colocations dans les principales villes :</h3>
-</div>
-    <div class="col-xs-12 col-sm-4">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-
-  <div class="card-description">
-    <h4>Marseille</h4>
-  </div>
-  <a class="card-link" href="#" ></a>
-</div>
+      <h3 class="text-center">Retrouve les colocations dans les principales villes :</h3>
     </div>
-    <div class="col-xs-12 col-sm-4">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-
-  <div class="card-description">
-    <h4>Paris</h4>
-  </div>
-  <a class="card-link" href="#" ></a>
-</div>
+    <div class="row card-row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/marseille');">
+          <div class="card-title">
+            <h4>Marseille</h4>
+          </div>
+          <a class="card-link" href="/flats/index?city=marseille" ></a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');">
+          <div class="card-title">
+            <h4>Paris</h4>
+          </div>
+          <a class="card-link" href="/flats/index?city=paris" ></a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/lyon');">
+          <div class="card-title">
+            <h4>Lyon</h4>
+          </div>
+          <a class="card-link" href="/flats/index?city=lyon" ></a>
+        </div>
+      </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-
-  <div class="card-description">
-    <h4>Lyon</h4>
-  </div>
-  <a class="card-link" href="#" ></a>
-</div>
+    <div class="row card-row">
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/bordeaux');">
+          <div class="card-title">
+            <h4>Bordeaux</h4>
+          </div>
+          <a class="card-link" href="/flats/index?city=bordeaux" ></a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/lille');">
+          <div class="card-title">
+            <h4>Lille</h4>
+          </div>
+          <a class="card-link" href="/flats/index?city=lille" ></a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/nantes');">
+          <div class="card-title">
+            <h4>Nantes</h4>
+          </div>
+          <a class="card-link" href="/flats/index?city=nantes" ></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<div class="col-xs-6">
-      <button> <%=  link_to "Déposer une annonce", new_flat_path(@flat)  %> </button>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h3 class="text-center">Dépose une annonce pour ta colocation:</h3>
+    <div class="col-md-6 col-md-offset-3">
+    <button class="btn btn-primary btn-lg depot-annonce"> <%=  link_to "Déposer une annonce", new_flat_path(@flat)  %> </button>
+  </div>
+  </div>
 </div>
-
-
 </div>
