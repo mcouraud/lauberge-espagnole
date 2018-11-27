@@ -2,8 +2,6 @@
 
   <div class="row">
 
-
-
     <h1> Colocation de <%= @flat.number_of_roommates%> personnes | <%= @flat.flat_surface %> m² </h1>
 
     <div class="col-xs-6">
@@ -14,7 +12,12 @@
         <li> Loyer: <%= @flat.rent %>€ / mois </li>
         <li> Disponible à partir du <%= @flat.available_from %></li>
       </ul>
-
+      <% if !@flat.description.nil? %>
+        <h2> Description </h2>
+        <p> <%= @flat.description %> </p>
+      <% end %>
+    <p> <%=  link_to "Modifier l'annonce", edit_flat_path(@flat)  %> | <%=  link_to "Supprimer l'annonce", flat_path(@flat),
+    method: :delete, data: { confirm: "Are you sure?" }  %> </p>
     </div>
     <div class="col-xs-6">
     <h2> Réserver cette colocation </h2>

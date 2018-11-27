@@ -1,8 +1,17 @@
 <div class="container">
-  <h1>Trouve ta colocation</h1>
 
-  <form action="/flats/index?" method="get">
-    <input type="text" name="city" value="">
-    <input type="submit" value="Rechercher"/>
-  </form>
+  <div class="row">
+    <h1>Trouve ta colocation</h1>
+
+      <div class="col-xs-6">
+      <form action="/flats/index?" method="get">
+        <input type="text" name="city" value="Ville">
+        <input type="submit" value="Rechercher"/>
+      </form>
+    </div>
+
+    <div class="col-xs-6">
+      <button> <%=  link_to "Déposer une annonce", new_flat_path(@flat)  %> </button>
+    </div>
+  </div>
 </div>
