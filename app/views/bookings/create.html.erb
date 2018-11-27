@@ -1,2 +1,8 @@
 <h1>Bookings#create</h1>
 <p>Find me in app/views/bookings/create.html.erb</p>
+
+<% if @booking.save %>
+<%=  flash.now[:notice] = 'Réservation confirmée!'%>
+     <%  else %>
+     <%=   flash.now[:alert] = 'Erreur, veuillez réessayer'%>
+   <% end %>
