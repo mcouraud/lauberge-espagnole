@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_130756) do
     t.string "lastname"
     t.string "firstname"
     t.integer "age"
-    t.string "nickname"
     t.string "phone_number"
     t.string "nationality"
     t.string "situation"
