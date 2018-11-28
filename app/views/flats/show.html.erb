@@ -3,8 +3,43 @@
   <div class="row">
 
     <h1> Colocation de <%= @flat.number_of_roommates%> personnes | <%= @flat.flat_surface %> m² </h1>
+<div class="col-xs-6 p-20">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
 
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="https://lcdcfrance-prod.s3.amazonaws.com/pictures/a59ad7ddc4f3b443ecc8e796e0d50342_medium.jpg" alt="colocation photo 1">
+      </div>
+      <div class="item">
+        <img src="https://lcdcfrance-prod.s3.amazonaws.com/pictures/56e29bda1d3e2e9bb9bb450bcb5d9a8e_medium.jpg" alt="colocation photo 2">
+      </div>
+      <div class="item">
+        <img src="https://lcdcfrance-prod.s3.amazonaws.com/pictures/1a8dd15993442024ccc275fb07eff099_medium.jpg" alt="colocation photo 3">
+
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+
+
+<br>
     <div class="col-xs-6">
+
       <h2> Détails </h2>
       <ul>
         <li> Adresse : <%= @flat.address %> </li>
@@ -16,19 +51,25 @@
         <h2> Description </h2>
         <p> <%= @flat.description %> </p>
       <% end %>
-    <p> <%=  link_to "Modifier l'annonce", edit_flat_path(@flat)  %> | <%=  link_to "Supprimer l'annonce", flat_path(@flat),
+      <% if @flat.user == current_user %>
+         <p> <%=  link_to "Modifier l'annonce", edit_flat_path(@flat)  %> | <%=  link_to "Supprimer l'annonce", flat_path(@flat),
     method: :delete, data: { confirm: "Are you sure?" }  %> </p>
+      <% end %>
     </div>
+
     <div class="col-xs-6">
-    <h2> Réserver cette colocation </h2>
+    <h2> Visiter cette colocation </h2>
 
     <%= form_for [@flat, @booking] do |f| %>
-    <label>Date d'entrée</label><br>
-    <p> <%= f.date_field :start_date%> </p>
-    <label>Date de sortie</label><br>
-    <p> <%= f.date_field :end_date%> </p>
-    <p> <%= f.submit "Réserver"%> </p>
+    <label>Date de visite</label><br>
+    <p> <%= f.date_select :start_date%> </p>
+    <label>Heure de visite</label><br>
+    <p> <%= f.time_select :end_date %> </p>
+    <p> <%= f.check_box :user_id %> Visite Skype </p>
+    <p> <%= f.submit "Réserver une visite"%> </p>
     <% end %>
+
+
 
     <% if flash[:notice] %>
     <div class="notice"> <%= flash[:notice] %> </div>
