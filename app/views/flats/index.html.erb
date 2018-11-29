@@ -1,5 +1,6 @@
 <div class="container">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <h3 class="text-center">Les colocations à <%= params[:city].downcase.capitalize %> </h3>
 =======
 
@@ -12,6 +13,32 @@
 <%= link_to "↩︎ Revenir à la Homepage", root_path %>
 
 >>>>>>> 82e19f270a3f1a37a4c8d2b84e3c0c90c4e30090
+=======
+  <h3 class="text-center">Les colocations à <%= params[:city].downcase.capitalize %> </h3>
+</div>
+<div class="container">
+  <div class="row">
+    <% @flats.each do |flat|%>
+    <div class="col-xs-12 col-sm-6">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');">
+        <div class="card-body">
+          <p class="card-description">
+            <h2>  <%= link_to "Colocation disponible le #{flat.available_from}| #{flat.flat_surface} m²", flat %> </h2>
+          </p>
+        </div>
+        <span class="bandeau">
+          <span class="prix">
+            <%= flat.rent %> €/mois
+          </span>
+          <span class="coloc">
+            <%= flat.number_of_roommates %> colocs
+          </span>
+        </span>
+      </div>
+    </div>
+    <% end %>
+  </div>
+>>>>>>> master
 </div>
 
 <div class="panels">
