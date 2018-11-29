@@ -15,17 +15,6 @@ ActiveRecord::Schema.define(version: 2018_11_27_130756) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: :cascade do |t|
-    t.date "start_date"
-    t.date "end_date"
-    t.bigint "user_id"
-    t.bigint "flat_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["flat_id"], name: "index_bookings_on_flat_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
   create_table "flats", force: :cascade do |t|
     t.string "city"
     t.string "address"
@@ -66,7 +55,19 @@ ActiveRecord::Schema.define(version: 2018_11_27_130756) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "bookings", "flats"
-  add_foreign_key "bookings", "users"
+  create_table "visits", force: :cascade do |t|
+    t.date "date"
+    t.time "time"
+    t.boolean "skype", default: false
+    t.bigint "user_id"
+    t.bigint "flat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flat_id"], name: "index_visits_on_flat_id"
+    t.index ["user_id"], name: "index_visits_on_user_id"
+  end
+
   add_foreign_key "flats", "users"
+  add_foreign_key "visits", "flats"
+  add_foreign_key "visits", "users"
 end
