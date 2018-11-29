@@ -6,7 +6,7 @@ class FlatsController < ApplicationController
 
   def show
     set_flat
-    @booking = Booking.new
+    @visit = Visit.new
   end
 
   def new
