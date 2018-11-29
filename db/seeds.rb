@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'pry-byebug'
 
+Flat.destroy_all
+User.destroy_all
+
 user1 = User.new(firstname: "Camille", lastname: "Menard", age: 24, email: "c.menard@outlook.fr", password: "Hello2", nationality: "Française", situation: "Le wagon student")
 #binding.pry
 user1.save!
@@ -14,7 +17,7 @@ user1.save!
 user2 = User.new(firstname: "Antoine", lastname: "Pontier", age: 24, email: "a.pontier@free.fr", password: "Hello2", nationality: "Italien", situation: "Chef de projet")
 user2.save!
 
-100.times do
+10.times do
   city = ["Marseille", "Lille", "Bordeaux", "Paris", "Lyon", "Nantes", "Toulouse"].sample
   address = ["14 rue Charles de Gaulle", "22 rue Louis Pasteur", "8 rue Victor Hugo", "31 rue Jean Jaurès", "83 boulevard Léon Gambetta"].sample
   flat_surface = [70, 80, 90, 95, 100, 110, 120, 130].sample
