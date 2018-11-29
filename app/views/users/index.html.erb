@@ -1,0 +1,13 @@
+<div class="container">
+
+  <h1> Mes annonces </h1>
+
+  <% if @flats == [] %>
+    <p> Vous n'avez aucune annonce postée.</p>
+  <% else %>
+    <% @flats.each do |flat| %>
+        <p> <%= flat.city %> : <%= flat.address %> </p>
+      <% end %>
+  <% end %>
+
+</div>

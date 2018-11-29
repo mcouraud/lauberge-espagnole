@@ -1,0 +1,15 @@
+<div class="container">
+  <h1> Mes visites </h1>
+    <% if @visits == [] %>
+        <p> Vous n'avez aucune visite de prévu pour le moment.</p>
+    <% else %>
+      <div class="row">
+        <ul>
+          <% @visits.each do |visit| %>
+            <li> Le <%= visit.date %> à <%= visit.time.strftime("%H:%M")%>  pour la colocation au <%= visit.flat.address %> </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
