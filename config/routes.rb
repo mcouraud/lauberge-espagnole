@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :flats do
     resources :visits, only: [:create]
   end
+  resources :visits, only: [:index]
+  resources :users, only: [:index, :show]
 end

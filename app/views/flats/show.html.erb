@@ -5,7 +5,7 @@
     <h1 class=""> Colocation de <%= @flat.number_of_roommates%> personnes | <%= @flat.flat_surface %> m² </h1>
     </div>
 
-<!-- Carousel photos  -->
+  <!-- Carousel photos  -->
     <div class="col-xs-12 col-sm-6 p-20 carousel">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
@@ -55,24 +55,47 @@
       <% end %>
     </div>
 
+
+    <!--     <div class="col-xs-6">
+    <h2> Visiter cette colocation </h2>
+
+    <%= simple_form_for [@flat, @visit] do |f| %>
+      <% if @visit.errors.any? %>
+         <div>
+             <% @visit.errors.full_messages.each do |message| %>
+               <p class="alert-danger"><%= message %></p>
+             <% end %>
+         </div>
+       <% end %>
+      <%= f.input :date, html5: true, label: "Jour de visite : " %>
+      <%= f.input :time, html5: true %>
+      <p> <%= f.check_box :skype %> Visite Skype </p>
+      <%= f.submit%>
+    <% end %> -->
+
+
+
     <!-- Form pour la visite de l'appart.  -->
-    <div class="col-xs-4">
-      <h2> Visiter la colocation :</h2>
-      <div class="visit-form">
-      <%= form_for [@flat, @visit] do |f| %>
-      <label>Date de visite</label><br>
-      <p> <%= f.date_field :date, class: "form-control" %> </p>
-      <label>Heure de visite</label><br>
-      <p> <%= f.time_select :time, class: "form-control" %> </p>
-      <p> <%= f.check_box :skype, class: "form-check-input"%> Visite Skype </p>
-      <p> <%= f.submit "Réserver une visite", class: 'btn btn-primary'%> </p>
+  <div class="col-xs-6">
+    <h2> Visiter la colocation :</h2>
+    <div class="visit-form">
+      <%= simple_form_for [@flat, @visit] do |f| %>
+        <% if @visit.errors.any? %>
+           <div>
+               <% @visit.errors.full_messages.each do |message| %>
+                 <p class="alert-danger"><%= message %></p>
+               <% end %>
+           </div>
+        <% end %>
+        <%= f.input :date, html5: true, label: "Jour de visite : ", class: "form-control" %>
+        <%= f.input :time, html5: true, class: "form-control" %>
+        <p> <%= f.check_box :skype, class: "form-check-input" %> Visite Skype </p>
+        <%= f.submit "Réserver une visite", class: 'btn btn-primary'%>
       <% end %>
-      <% if flash[:notice] %>
-      <div class="notice"> <%= flash[:notice] %> </div>
-      <% end %>
-      </div>
     </div>
   </div>
+
   <br>
+
   <%=  link_to "↩︎ Revenir aux résultats", controller: "flats", city: @flat.city  %>
 </div>
