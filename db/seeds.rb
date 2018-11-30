@@ -17,7 +17,7 @@ user1.save!
 user2 = User.new(firstname: "Antoine", lastname: "Pontier", age: 24, email: "a.pontier@free.fr", password: "Hello2", nationality: "Italien", situation: "Chef de projet")
 user2.save!
 
-10.times do
+50.times do
   city = ["Marseille", "Lille", "Bordeaux", "Paris", "Lyon", "Nantes", "Toulouse"].sample
   address = ["14 rue Charles de Gaulle", "22 rue Louis Pasteur", "8 rue Victor Hugo", "31 rue Jean Jaurès", "83 boulevard Léon Gambetta"].sample
   flat_surface = [70, 80, 90, 95, 100, 110, 120, 130].sample

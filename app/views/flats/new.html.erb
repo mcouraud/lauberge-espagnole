@@ -1,31 +1,25 @@
 <div class="container">
   <div class="row">
     <h1 class ="text-center">Créer mon annonce</h1>
-    <div class="col-md-6 col-md-offset-3 input-group">
+    <div class="col-md-6 col-md-offset-3">
       <%= simple_form_for(@flat) do |f| %>
-
-      <%= f.input :city, class: 'form-control'%>
-
-      <%= f.input :address, class: 'form-control'%>
-
-      <%= f.input :available_from, html5: true, class: 'form-control'%>
-
-      <%= f.input :flat_surface, min: 0, class: 'form-control'%>
-
-      <%= f.input :room_surface, class: "form-control", min: 0%>
-
-      <%= f.input :number_of_rooms, min: 0, class: 'form-control'%>
-
-      <%= f.input :number_of_roommates, min: 0, class: 'form-control'%>
-
-      <%= f.input :description, class: 'form-control'%>
-
-      <%= f.input :photo%>
-      <%= f.input :photo_cache, as: :hidden %>
-      <%= f.input :rent, min: 0, class: 'form-control'%>
-      <%= f.association :user, as: :hidden%>
-      <%= f.submit "Créer", class: 'btn btn-primary col-md-6 col-md-offset-3 text-center'%>
-
+        <%= f.input :city, class: 'form-control', label: 'Ville' %>
+        <%= f.input :address, class: 'form-control', label: 'N° et nom de rue'%>
+        <%= f.input :available_from, as: :date, html5: true, class: 'form-control', label: 'Disponible à partir de :'%>
+        <%= f.input :flat_surface, as: :integer, min: 0, class: 'form-control', label: 'Surface totale'%>
+        <%= f.input :room_surface, as: :integer, class: "form-control", min: 0, label: 'Surface de la chambre à louer'%>
+        <%= f.input :number_of_rooms, as: :integer, min: 0, class: 'form-control', label: 'Nombre de chambres'%>
+        <%= f.input :number_of_roommates, as: :integer, min: 0, class: 'form-control', label: 'Nombre de colocataires'%>
+        <%= f.input :description, as: :text, class: 'form-control'%>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo2, as: :file %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo3, as: :file %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :rent, label: 'Loyer / mois', min: 0, class: 'form-control'%>
+        <%= f.association :user, as: :hidden%>
+        <%= f.submit "Créer", class: 'btn btn-primary col-md-6 col-md-offset-3 text-center'%>
       <% end %>
     </div>
   </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_142033) do
+ActiveRecord::Schema.define(version: 2018_11_30_150659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2018_11_30_142033) do
     t.string "zip_code"
     t.string "full_address"
     t.string "photo"
+    t.string "photo2"
+    t.string "photo3"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
