@@ -33,7 +33,7 @@
           <!-- Avatar with dropdown menu -->
           <div class="navbar-wagon-item">
             <div class="dropdown">
-              <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+              <%= image_tag "profile_picture", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
               <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
                 <li>
                   <%= link_to user_path(current_user) do %>
@@ -74,7 +74,7 @@
       </div>
     </div>
     <div class="marg-bot-top">
-      <%= render "shared/flashes" %>
+    <%= render "shared/flashes" %>
       <%= yield %>
     </div>
     <div class="footer">
@@ -86,7 +86,7 @@
         <a href="#"><i class="fab fa-linkedin"></i></a>
       </div>
       <div class="footer-copyright">
-        Fait avec <i class="fas fa-heart"></i> en 🇫🇷
+       <p> Fait avec <i class="fas fa-heart"></i> en 🇫🇷 </p>
       </div>
     </div>
 
