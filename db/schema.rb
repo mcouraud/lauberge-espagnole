@@ -28,11 +28,11 @@ ActiveRecord::Schema.define(version: 2018_11_30_104235) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.json "photo"
     t.float "latitude"
     t.float "longitude"
     t.string "zip_code"
     t.string "full_address"
+    t.json "photo"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
