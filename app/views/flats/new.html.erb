@@ -1,41 +1,31 @@
 <div class="container">
-  <h1>Créer mon annonce</h1>
   <div class="row">
     <h1 class ="text-center">Créer mon annonce</h1>
     <div class="col-md-6 col-md-offset-3 input-group">
       <%= simple_form_for(@flat) do |f| %>
-      <label>Ville</label><br>
-      <p> <%= f.text_field :city, class: 'form-control'%> </p>
-      <label>Adresse</label><br>
-      <p> <%= f.text_field :address, class: 'form-control'%> </p>
-      <label>Disponible à partir de</label><br>
-      <p> <%= f.date_field :available_from, class: 'form-control'%> </p>
-      <label>Surface totale de la colocation</label><br>
-      <p> <%= f.number_field :flat_surface, min: 0, class: 'form-control'%> </p>
-      <label>Surface de la chambre disponible</label><br>
-      <p> <%= f.number_field :room_surface, class: "form-control", min: 0%> </p>
-      <label>Nombre de chambres</label><br>
-      <p> <%= f.number_field :number_of_rooms, min: 0, class: 'form-control'%> </p>
-      <label>Nombre de colocataires</label><br>
-      <p> <%= f.number_field :number_of_roommates, min: 0, class: 'form-control'%> </p>
-      <label>Description</label><br>
-      <!-- <label>Photos</label><br> -->
-      <!-- <a href="#" id="upload_widget_opener">Upload multiple images</a>
-      <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
-      <script type="text/javascript">
-      cloudinary.applyUploadWidget('#upload_widget_opener',{
-      cloudName: 'dwe1x520b', uploadPreset: 'mcpkby8v', sources: ["local", "camera"], maxFiles: "3" }, (error, result) => { });
-      </script>
-      -->
-      <p> <%= f.text_area :description, class: 'form-control'%> </p>
 
-        <%= f.input :photo%>
-        <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :city, class: 'form-control'%>
 
-      <label>Loyer / mois (charges comprises)</label><br>
-      <p> <%= f.number_field :rent, min: 0, class: 'form-control'%> </p>
-      <%= f.hidden_field :user_id, :value => 1%>
-      <p> <%= f.submit "Créer", class: 'btn btn-primary col-md-6 col-md-offset-3 text-center'%> </p>
+      <%= f.input :address, class: 'form-control'%>
+
+      <%= f.input :available_from, class: 'form-control'%>
+
+      <%= f.input :flat_surface, min: 0, class: 'form-control'%>
+
+      <%= f.input :room_surface, class: "form-control", min: 0%>
+
+      <%= f.input :number_of_rooms, min: 0, class: 'form-control'%>
+
+      <%= f.input :number_of_roommates, min: 0, class: 'form-control'%>
+
+      <%= f.input :description, class: 'form-control'%>
+
+      <%= f.input :photo%>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.input :rent, min: 0, class: 'form-control'%>
+      <%= f.association :user, as: :hidden%>
+      <%= f.submit "Créer", class: 'btn btn-primary col-md-6 col-md-offset-3 text-center'%>
+
       <% end %>
     </div>
   </div>

@@ -21,6 +21,7 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    @flat.user = current_user
   end
 
   def create
