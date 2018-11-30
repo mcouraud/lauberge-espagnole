@@ -21,6 +21,6 @@ Geocoder.configure(
   # distances: :linear          # :spherical or :linear
   # [...]
   lookup: :nominatim,
-  units: :km,
+  units: :km
   # [...]
 )
