@@ -1,18 +1,46 @@
 // Import page-specific CSS files here.
 @import "home";
 
+.navbar-wagon {
+  position: fixed;
+  top: 0px;
+  right: 0%;
+  left: 0%;
+  z-index: 1;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+
+.container_index{
+  width: 50%;
+  float: right;
+  margin-right: 20px;
+  z-index: -1;
+
+}
+
 .text-center{
   font-size: 28px;
   padding: 8px 0px;
 }
 
-.card{
+.card_index{
   margin-left: 3px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   height: 40vh;
+  width: 40vh;
+  background-size: cover !important;
 }
 
-.card a{
+.card-description{
+  font-size: 20px;
+}
+.card_index a{
   text-decoration: none !important;
   color: #fff;
 }
@@ -21,8 +49,8 @@
   background: rgba(9,14,21,0.8);
   color: #fff;
   position: absolute;
-  left: 0;
-  bottom: 40px;
+  left: 20;
+  bottom: 60px;
   padding-left: 5px;
   padding-right: 10px;
   border-radius: 3px;
