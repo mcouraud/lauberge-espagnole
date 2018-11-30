@@ -2,7 +2,7 @@
 
 <h1>Créer mon annonce</h1>
 
-<%= form_for(@flat) do |f| %>
+<%= simple_form_for(@flat) do |f| %>
 <label>Ville</label><br>
 <p> <%= f.text_field :city%> </p>
 <label>Adresse</label><br>
@@ -19,8 +19,23 @@
 <p> <%= f.number_field :number_of_roommates%> </p>
 <label>Description</label><br>
 <p> <%= f.text_area :description%> </p>
-<label>Photos</label><br>
-<p> <%= f.file_field :photo%> </p>
+<!-- <label>Photos</label><br> -->
+  <%= f.file_field :photo%>
+  <%= f.input :photo_cache, as: :hidden %>
+
+
+
+<!-- <a href="#" id="upload_widget_opener">Upload multiple images</a>
+
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script type="text/javascript">
+  cloudinary.applyUploadWidget('#upload_widget_opener',{
+    cloudName: 'dwe1x520b', uploadPreset: 'mcpkby8v', sources: ["local", "camera"], maxFiles: "3" }, (error, result) => { });
+</script>
+ -->
+
+
 <label>Loyer / mois (charges comprises)</label><br>
 <p> <%= f.number_field :rent%> </p>
 <%= f.hidden_field :user_id, :value => 1%>
