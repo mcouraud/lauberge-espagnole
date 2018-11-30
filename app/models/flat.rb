@@ -1,5 +1,7 @@
 class Flat < ApplicationRecord
   mount_uploader :photo, PhotoUploader
+  mount_uploader :photo2, PhotoUploader
+  mount_uploader :photo3, PhotoUploader
   belongs_to :user
   validates :city, :address, :available_from, :flat_surface, :room_surface, :number_of_rooms, :number_of_roommates, :rent, :user_id, :photo, presence: true
   has_many :visits

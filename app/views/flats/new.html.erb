@@ -11,7 +11,11 @@
         <%= f.input :number_of_rooms, as: :integer, min: 0, class: 'form-control', label: 'Nombre de chambres'%>
         <%= f.input :number_of_roommates, as: :integer, min: 0, class: 'form-control', label: 'Nombre de colocataires'%>
         <%= f.input :description, as: :text, class: 'form-control'%>
-        <%= f.input :photo%>
+        <%= f.input :photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo2, as: :file %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.input :photo3, as: :file %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.input :rent, label: 'Loyer / mois', min: 0, class: 'form-control'%>
         <%= f.association :user, as: :hidden%>
