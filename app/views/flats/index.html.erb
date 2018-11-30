@@ -5,8 +5,9 @@
   height: 78%;
   position: fixed;
   right: 55%;
+  left: 1%;
   padding: 0px;
-  margin: 0px;
+  margin: 20px;
   border-width: 0px;
   top: 70px;"
   data-markers="<%= @markers.to_json %>"
@@ -18,11 +19,12 @@
   <div class="row">
     <% @flats.each do |flat|%>
     <div class="col-xs-12 col-sm-6">
-      <div class="card_index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');">
+      <div class="card_index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path flat.photo, height: 300, width: 400, crop: :fill %>');">
         <div class="card-body">
           <p class="card-description">
-            <p>  <%= link_to "Colocation disponible le #{flat.available_from}|", flat %> </p>
-            <p>  <%= link_to "#{flat.flat_surface} m²", flat %> </p>
+             <strong> <%= link_to "Colocation disponible le : #{flat.available_from.strftime("%d.%m.%Y")}", flat %> </strong>
+            <br>
+            <%= link_to "#{flat.flat_surface} m²", flat %>
           </p>
         </div>
         <span class="bandeau">
