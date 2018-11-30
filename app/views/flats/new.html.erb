@@ -2,27 +2,27 @@
 
 <h1>Créer mon annonce</h1>
 
+<div class="row">
+<h1 class ="text-center">Créer mon annonce</h1>
+<div class="col-md-6 col-md-offset-3 input-group">
 <%= simple_form_for(@flat) do |f| %>
 <label>Ville</label><br>
-<p> <%= f.text_field :city%> </p>
+<p> <%= f.text_field :city, class: 'form-control'%> </p>
 <label>Adresse</label><br>
-<p> <%= f.text_field :address%> </p>
+<p> <%= f.text_field :address, class: 'form-control'%> </p>
 <label>Disponible à partir de</label><br>
-<p> <%= f.date_field :available_from%> </p>
+<p> <%= f.date_field :available_from, class: 'form-control'%> </p>
 <label>Surface totale de la colocation</label><br>
-<p> <%= f.number_field :flat_surface%> </p>
+<p> <%= f.number_field :flat_surface, min: 0, class: 'form-control'%> </p>
 <label>Surface de la chambre disponible</label><br>
-<p> <%= f.number_field :room_surface%> </p>
+<p> <%= f.number_field :room_surface, class: "form-control", min: 0%> </p>
 <label>Nombre de chambres</label><br>
-<p> <%= f.number_field :number_of_rooms%> </p>
+<p> <%= f.number_field :number_of_rooms, min: 0, class: 'form-control'%> </p>
 <label>Nombre de colocataires</label><br>
-<p> <%= f.number_field :number_of_roommates%> </p>
+<p> <%= f.number_field :number_of_roommates, min: 0, class: 'form-control'%> </p>
 <label>Description</label><br>
 <p> <%= f.text_area :description%> </p>
 <!-- <label>Photos</label><br> -->
-  <%= f.file_field :photo%>
-  <%= f.input :photo_cache, as: :hidden %>
-
 
 
 <!-- <a href="#" id="upload_widget_opener">Upload multiple images</a>
@@ -35,11 +35,17 @@
 </script>
  -->
 
-
+<p> <%= f.text_area :description, class: 'form-control'%> </p>
+<label>Photos</label><br>
+<p>
+  <%= f.file_field :photo%>
+  <%= f.input :photo_cache, as: :hidden %>
+</p>
 <label>Loyer / mois (charges comprises)</label><br>
-<p> <%= f.number_field :rent%> </p>
+<p> <%= f.number_field :rent, min: 0, class: 'form-control'%> </p>
 <%= f.hidden_field :user_id, :value => 1%>
-<p> <%= f.submit "Créer"%> </p>
+<p> <%= f.submit "Créer", class: 'btn btn-primary col-md-6 col-md-offset-3 text-center'%> </p>
 <% end %>
-
+</div>
+</div>
 </div>
