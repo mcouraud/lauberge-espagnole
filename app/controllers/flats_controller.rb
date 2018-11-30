@@ -2,7 +2,15 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @flats = Flat.where('city LIKE ?', params[:city])
+    @flats = Flat.where.not(latitude: nil, longitude: nil).where('city LIKE ?', params[:city])
+
+    @markers = @flats.map do |flat|
+      {
+        lng: flat.longitude,
+        lat: flat.latitude,
+        infoWindow: { content: render_to_string(partial: "/flats/map_window", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
