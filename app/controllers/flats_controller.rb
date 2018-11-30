@@ -21,6 +21,7 @@ class FlatsController < ApplicationController
 
   def new
     @flat = Flat.new
+    @flat.user = current_user
   end
 
   def create
@@ -55,6 +56,6 @@ class FlatsController < ApplicationController
   end
 
   def flat_params
-    params.require(:flat).permit(:city, :address, :available_from, :flat_surface, :room_surface, :number_of_rooms, :number_of_roommates, :description, :photo, :rent, :user_id)
+    params.require(:flat).permit(:city, :address, :available_from, :flat_surface, :room_surface, :number_of_rooms, :number_of_roommates, :description, :rent, :user_id, :photo)
   end
 end
