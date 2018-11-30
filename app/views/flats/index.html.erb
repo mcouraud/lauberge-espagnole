@@ -1,22 +1,28 @@
-<div class="container">
-  <h3 class="text-center">Les colocations à <%= params[:city].downcase.capitalize %> </h3>
-</div>
+
 <div
   id="map"
-  style="width: 100%;
-  height: 600px;"
+  style="width: 45%;
+  height: 78%;
+  position: fixed;
+  right: 55%;
+  padding: 0px;
+  margin: 0px;
+  border-width: 0px;
+  top: 70px;"
   data-markers="<%= @markers.to_json %>"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" >
 </div>
 
-<div class="container">
+<div class="container_index">
+  <p class="text-center"> Les colocations à <%= params[:city].downcase.capitalize %>
   <div class="row">
     <% @flats.each do |flat|%>
     <div class="col-xs-12 col-sm-6">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');">
+      <div class="card_index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/paris');">
         <div class="card-body">
           <p class="card-description">
-            <h2>  <%= link_to "Colocation disponible le #{flat.available_from}| #{flat.flat_surface} m²", flat %> </h2>
+            <p>  <%= link_to "Colocation disponible le #{flat.available_from}|", flat %> </p>
+            <p>  <%= link_to "#{flat.flat_surface} m²", flat %> </p>
           </p>
         </div>
         <span class="bandeau">
@@ -31,3 +37,4 @@
     </div>
     <% end %>
   </div>
+</div>
